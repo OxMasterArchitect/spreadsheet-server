@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+  spreadsheet-server:
+    build: . # Uses local Dockerfile
+    environment:
+      SYNCFUSION_LICENSE_KEY: "Ngo9BigBOggjHTQxAR8/V1NMaF5cXmBCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWX1cc3RdRmNYWEN+WUY="
+      LC_ALL: de_DE.UTF-8
+      LANGUAGE: de_DE.UTF-8
+      LANG: de_DE.UTF-8
+    # Removed port exposure - now internal only
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - spreadsheet-server
