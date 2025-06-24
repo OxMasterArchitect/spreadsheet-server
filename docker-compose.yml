@@ -12,6 +12,7 @@ services:
     # Removed port exposure - now internal only
 
   nginx:
+    container_name: nginx
     image: "jc21/nginx-proxy-manager:latest"
     restart: unless-stopped
     ports:
