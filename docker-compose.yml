@@ -9,9 +9,9 @@ services:
       LC_ALL: de_DE.UTF-8
       LANGUAGE: de_DE.UTF-8
       LANG: de_DE.UTF-8
+    depends_on:
+      - spreadsheet-server
     # Removed port exposure - now internal only
-    networks:
-      - spreadsheet-network
 
   nginx:
     image: docker.io/library/nginx:latest
@@ -21,13 +21,5 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     restart: unless-stopped
-    depends_on:
-      - spreadsheet-server
 
   # Add a shared network for internal communication
-  networks:
-    - spreadsheet-network
-
-networks:
-  spreadsheet-network:
-    driver: bridge
