@@ -11,15 +11,15 @@ services:
       - nginx
     # Removed port exposure - now internal only
 
-nginx:
-  image: "jc21/nginx-proxy-manager:latest"
-  restart: unless-stopped
-  ports:
-    - "80:80"
-    - "81:81"
-    - "443:443"
-  volumes:
-    - ./nginx-data:/data
-    - ./nginx-letsencrypt:/etc/letsencrypt
+  nginx:
+    image: "jc21/nginx-proxy-manager:latest"
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "81:81"
+      - "443:443"
+    volumes:
+      - ./nginx-data:/data
+      - ./nginx-letsencrypt:/etc/letsencrypt
 
   # Add a shared network for internal communication
