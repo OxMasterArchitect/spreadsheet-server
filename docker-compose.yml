@@ -4,7 +4,7 @@ services:
   spreadsheet-server:
     build: . # Uses local Dockerfile
     environment:
-      SYNCFUSION_LICENSE_KEY: "Ngo9BigBOggjHTQxAR8/V1NMaF5cXmBCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWX1cc3RdRmNYWEN+WUY="
+      SYNCFUSION_LICENSE_KEY: ${SYNCFUSION_LICENSE_KEY}
       LC_ALL: de_DE.UTF-8
       LANGUAGE: de_DE.UTF-8
       LANG: de_DE.UTF-8
