@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
   spreadsheet-server:
-    name: spreadsheet-server
+    container_name: spreadsheet-server
     build: . # Uses local Dockerfile
     environment:
       SYNCFUSION_LICENSE_KEY: ${SYNCFUSION_LICENSE_KEY}
