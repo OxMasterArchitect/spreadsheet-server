@@ -1,0 +1,3 @@
+# Exclude Nginx data directories to avoid permission errors during Docker build
+nginx-data/
+nginx-letsencrypt/ 
