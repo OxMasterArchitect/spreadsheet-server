@@ -10,6 +10,8 @@ services:
     depends_on:
       - nginx
     # Removed port exposure - now internal only
+    networks:
+      - spreadsheet-network
 
   nginx:
     container_name: nginx
@@ -23,4 +25,10 @@ services:
       - ./nginx-data:/data
       - ./nginx-letsencrypt:/etc/letsencrypt
 
+    networks:
+      - spreadsheet-network
+
   # Add a shared network for internal communication
+networks:
+  spreadsheet-network:
+    driver: bridge
