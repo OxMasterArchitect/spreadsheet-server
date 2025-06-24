@@ -1,5 +1,3 @@
-version: "3.4"
-
 services:
   spreadsheet-server:
     container_name: spreadsheet-server
